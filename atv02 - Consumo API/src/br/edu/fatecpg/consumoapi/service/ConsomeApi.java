@@ -1,4 +1,4 @@
-package br.edu.fatecpg.api.service;
+package br.edu.fatecpg.API.service;
 
 import java.io.IOException;
 import java.net.URI;

@@ -3,6 +3,7 @@ package br.edu.fatecpg.view;
 import br.edu.fatecpg.model.Endereco;
 import br.edu.fatecpg.service.ConsomeApi;
 import com.google.gson.Gson;
+
 import java.io.IOException;
 
 public class Main {

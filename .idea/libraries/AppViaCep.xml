@@ -1,9 +1,0 @@
-<component name="libraryTable">
-  <library name="AppViaCep">
-    <CLASSES>
-      <root url="jar://$PROJECT_DIR$/Aula03_API/AppViaCep/AppViaCep.jar!/" />
-    </CLASSES>
-    <JAVADOC />
-    <SOURCES />
-  </library>
-</component>

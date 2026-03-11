@@ -1,4 +1,4 @@
-package br.edu.fatecpg.api.model;
+package br.edu.fatecpg.API.model;
 
 public class Endereco {
     private String cep;

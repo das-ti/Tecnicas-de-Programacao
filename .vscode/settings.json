@@ -1,0 +1,10 @@
+{
+    "java.project.sourcePaths": [
+        "atv03 - JDBC API\\src",
+        "atv03 - JDBC API\\lib"
+    ],
+    "java.project.referencedLibraries": [
+        "atv03 - JDBC API\\lib\\gson-2.13.1.jar",
+        "atv03 - JDBC API\\lib\\postgresql-42.7.9.jar"
+    ]
+}

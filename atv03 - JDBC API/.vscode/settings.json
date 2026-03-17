@@ -1,0 +1,11 @@
+{
+    "java.project.referencedLibraries": [
+        "lib\\gson-2.13.1.jar",
+        "lib\\postgresql-42.7.9.jar"
+    ],
+    "java.debug.settings.onBuildFailureProceed": true,
+    "java.project.sourcePaths": [
+        "lib",
+        "src"
+    ]
+}

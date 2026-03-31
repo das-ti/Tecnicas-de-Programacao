@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Busca de Países</title>
+</head>
+<body>
+    <h1>Busca de Países</h1>
+    <p>Digite o nome do país em inglês</p>
+
+    <form action="/buscar" method="post">
+        <input type="text" name="nome" placeholder="Ex: Brazil, France, Japan" required />
+        <button type="submit">Buscar</button>
+    </form>
+
+    <div th:if="${erro}">
+        <p th:text="${erro}"></p>
+    </div>
+</body>
+</html>

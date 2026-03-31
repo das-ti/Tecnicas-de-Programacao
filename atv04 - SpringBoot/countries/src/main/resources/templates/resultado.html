@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pais != null} ? ${pais.nomeComum} : 'Não encontrado'">Resultado</title>
+</head>
+<body>
+
+    <div th:if="${erro}">
+        <p th:text="${erro}"></p>
+        <a href="/">← Voltar</a>
+    </div>
+
+    <div th:if="${pais}">
+        <h1 th:text="${pais.nomeComum}"></h1>
+
+        <img th:src="${pais.urlBandeira}"
+             th:alt="${pais.nomeComum}"
+             width="200" />
+
+        <table>
+            <tr>
+                <td>Nome oficial</td>
+                <td th:text="${pais.nomeOficial}"></td>
+            </tr>
+            <tr>
+                <td>Capital</td>
+                <td th:text="${pais.capital}"></td>
+            </tr>
+            <tr>
+                <td>Região</td>
+                <td th:text="${pais.regiao}"></td>
+            </tr>
+            <tr>
+                <td>Sub-região</td>
+                <td th:text="${pais.subregiao}"></td>
+            </tr>
+            <tr>
+                <td>População</td>
+                <td th:text="${#numbers.formatInteger(pais.populacao, 1, 'POINT')}"></td>
+            </tr>
+            <tr>
+                <td>Área (km²)</td>
+                <td th:text="${#numbers.formatDecimal(pais.area, 1, 'POINT', 2, 'COMMA')}"></td>
+            </tr>
+        </table>
+
+        <a href="/">Buscar outro país</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,100 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Resultado do Clima</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        max-width: 500px;
+        margin: 80px auto;
+      }
+      .card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 24px;
+        margin-top: 20px;
+      }
+      .temperatura {
+        font-size: 48px;
+        font-weight: bold;
+        margin: 12px 0;
+      }
+      .descricao {
+        font-size: 22px;
+        margin-bottom: 16px;
+      }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 16px;
+      }
+      td {
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+      }
+      td:first-child {
+        font-weight: bold;
+        color: #555;
+        width: 50%;
+      }
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 8px 16px;
+        background: #f0f0f0;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      a:hover {
+        background: #cfe0f5;
+        border: 1px solid #020629;
+      }
+    </style>
+  </head>
+  <body>
+    <div th:if="${erro}">
+      <p th:text="${erro}"></p>
+      <a href="/">← Voltar</a>
+    </div>
+
+    <div th:if="${dados}">
+      <h1>🌍 Clima Atual</h1>
+
+      <div class="card">
+        <div
+          class="descricao"
+          th:text="${dados.climaAtual.descricaoClima}"
+        ></div>
+        <div
+          class="temperatura"
+          th:text="${dados.climaAtual.temperatura} + ' °C'"
+        ></div>
+
+        <table>
+          <tr>
+            <td>💨 Vento</td>
+            <td th:text="${dados.climaAtual.velocidadeVento} + ' km/h'"></td>
+          </tr>
+          <tr>
+            <td>📍 Latitude</td>
+            <td th:text="${dados.latitude}"></td>
+          </tr>
+          <tr>
+            <td>Longitude</td>
+            <td th:text="${dados.longitude}"></td>
+          </tr>
+          <tr>
+            <td>Fuso horário</td>
+            <td th:text="${dados.timezone}"></td>
+          </tr>
+        </table>
+      </div>
+
+      <a href="/">← Buscar outro local</a>
+    </div>
+  </body>
+</html>

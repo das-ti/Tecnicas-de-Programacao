@@ -8,11 +8,15 @@ import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.mylabsystems.cadastroproduto.model.Produto;
 
 import jakarta.validation.Valid;
+
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 @Controller
 public class ProdutoController {
@@ -43,5 +47,13 @@ public class ProdutoController {
     public String exibirLista(Model model) {
         model.addAttribute("produtos", produtos);
         return "lista";
+    }
+
+    @PostMapping("/remover/{index}")
+    public String remover(@PathVariable int index) {
+        if(index >= 0 && index < produtos.size()){
+            produtos.remove(index);
+        }
+        return "redirect:/lista";
     }
 }

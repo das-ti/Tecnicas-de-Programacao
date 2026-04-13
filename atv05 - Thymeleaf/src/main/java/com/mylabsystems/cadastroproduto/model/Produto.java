@@ -56,12 +56,11 @@ public class Produto {
         this.descricao = descricao;
     }
     
-    public int getestoque() {
+    public int getEstoque() {
         return estoque;
     }
     
-    public void setestoque(int estoque) {
+    public void setEstoque(int estoque) {
         this.estoque = estoque;
     }
-    
 }

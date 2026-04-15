@@ -1,4 +1,6 @@
+package com.mylabsystems.view;
 
+import com.mylabsystems.model.Funcionario;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -45,14 +47,13 @@ public class Main {
 
         ordemAlfabetica.forEach(System.out::println);
 
-        System.out.println("\n### Total Gasto Com Salários ###");
         double totalSalarios = funcionarios.stream()
                 .mapToDouble(Funcionario::getSalario)
                 .reduce(0.0, Double::sum);
 
-        System.out.printf("\n### Total da folha salarial: R$ %.2f%n ###", totalSalarios);
+        System.out.printf("Total da folha salarial: R$ %.2f%n", totalSalarios);
 
-        System.out.println("### Média Salarial por Departamento ###");
+        System.out.println("\n### Média Salarial por Departamento ###");
         Map<String, Double> mediaSalarialPorDepto = funcionarios.stream()
                 .collect(Collectors.groupingBy(
                         Funcionario::getDepartamento,

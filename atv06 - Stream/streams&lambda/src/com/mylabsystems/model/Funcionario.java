@@ -1,4 +1,7 @@
+package com.mylabsystems.model;
+
 public class Funcionario {
+
     private String nome;
     private String departamento;
     private double salario;
@@ -10,30 +13,39 @@ public class Funcionario {
         this.salario = salario;
         this.anosDeServico = anosDeServico;
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public String getDepartamento() {
         return departamento;
     }
+
     public void setDepartamento(String departamento) {
         this.departamento = departamento;
     }
+
     public double getSalario() {
         return salario;
     }
+
     public void setSalario(double salario) {
         this.salario = salario;
     }
+
     public int getAnosDeServico() {
         return anosDeServico;
     }
+
     public void setAnosDeServico(int anosDeServico) {
         this.anosDeServico = anosDeServico;
     }
+
     @Override
     public String toString() {
         return "Funcionario [nome=" + nome + ", departamento=" + departamento + ", salario=" + salario

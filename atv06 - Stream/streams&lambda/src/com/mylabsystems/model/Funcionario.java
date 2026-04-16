@@ -51,4 +51,7 @@ public class Funcionario {
         return "Funcionario [nome=" + nome + ", departamento=" + departamento + ", salario=" + salario
                 + ", anosDeServico=" + anosDeServico + "]";
     }
+
+    
+
 }

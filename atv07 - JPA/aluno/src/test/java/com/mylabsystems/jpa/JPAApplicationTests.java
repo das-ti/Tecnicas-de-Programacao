@@ -1,10 +1,10 @@
-package com.mylabsystems.project;
+package com.mylabsystems.jpa;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProjectApplicationTests {
+class JPAApplicationTests {
 
 	@Test
 	void contextLoads() {

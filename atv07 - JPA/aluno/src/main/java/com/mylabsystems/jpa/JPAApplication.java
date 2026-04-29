@@ -22,32 +22,34 @@ public class JPAApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        // System.out.println("DSM");
 
-        // Aluno a1 = new Aluno("LAI", "22345678917","7","lan@gmail.com");
-        // Aluno a2 = new Aluno("TIN", "32345678918","8","ton@gmail.com");
-        // Aluno a3 = new Aluno("BIA", "32345678919","9","bir@gmail.com");
-        // rep.save(a1);
-        // rep.save(a2);
-        // rep.save(a3);
-
+        // Aluno a1 = new Aluno("Marcos", "22345674917");
+        // Aluno a2 = new Aluno("Pedro", "32345678418");
+        // Aluno a3 = new Aluno("Felipe", "32345678419");
+        Aluno a4 = new Aluno("Sonia", "22345674917","4","sonia@gmail.com");
+        Aluno a5 = new Aluno("Dina", "32345678418","5","dina@gmail.com");
+        Aluno a6 = new Aluno("Mara", "32345678419","6","mara@gmail.com");
+        // // rep.save(a1);
+        // // rep.save(a2);
+        // // rep.save(a3);
+        rep.save(a4);
+        rep.save(a5);
+        rep.save(a6);
         List<Aluno> alunos = rep.findAll();
         alunos.forEach(System.out::println);
         alunos.forEach(a -> System.out.println("# Nome: " + a.getNome() + "  | E-mail: " + a.getEmail() + " #"));
 
-		      // AQUI você usa findById e deleteById:
+     
         rep.findById(1L).ifPresent(aluno
                 -> System.out.println("Encontrado: " + aluno.getNome())
         );
 
         rep.deleteById(2L);
 
-        // Buscar por nome usando o método customizado
-        List<Aluno> alunos1 = rep.buscarPorNome("BIA");
+        List<Aluno> alunos1 = rep.buscarPorNome("Sonia");
         alunos1.forEach(a -> System.out.println("Nome: " + a.getNome()));
 
-        // Listar todos
         List<Aluno> todos = rep.findAll();
         todos.forEach(a -> System.out.println("Aluno: " + a.getNome()));
-	}
+    }
 }

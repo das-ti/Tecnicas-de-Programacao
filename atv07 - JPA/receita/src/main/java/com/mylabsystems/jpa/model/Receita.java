@@ -10,7 +10,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "table_receitas")
+@Table(name = "tb_receitas")
 public class Receita {
 
     @Id
@@ -80,6 +80,4 @@ public class Receita {
         return "Receita [id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", preco=" + preco
                 + ", emPromocao=" + emPromocao + "]";
     }
-
-
 }

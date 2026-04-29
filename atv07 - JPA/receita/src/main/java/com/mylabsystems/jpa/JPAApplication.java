@@ -1,17 +1,15 @@
 package com.mylabsystems.jpa;
 
 import java.math.BigDecimal;
-
-import com.mylabsystems.jpa.model.Receita;
-import com.mylabsystems.jpa.repository.ReceitaRepository;
-
-import java.util.Arrays;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+
+import com.mylabsystems.jpa.model.Receita;
+import com.mylabsystems.jpa.repository.ReceitaRepository;
 
 @SpringBootApplication
 public class JPAApplication implements CommandLineRunner {
@@ -25,8 +23,6 @@ public class JPAApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("Minhas Receitas Favoritas");
-
         Receita r1 = new Receita(
                 "Cuzcuz Paulista",
                 "Salgados",
@@ -64,11 +60,8 @@ public class JPAApplication implements CommandLineRunner {
     
         rep.saveAll(List.of(r1, r2, r3, r4, r5));
 
-        System.out.println("5 receitas cadastradas com sucesso!\n");
-
-        // Buscando receitas em promoção
         System.out.println("RECEITAS EM PROMOÇÃO:\n");
-        List<Receita> receitasEmPromocao = rep.buscarPorEmPromocao();
+        List<Receita> receitasEmPromocao = rep.findByEmPromocaoTrue();
 
         receitasEmPromocao.forEach(receita -> {
             System.out.println(receita.getNome()
